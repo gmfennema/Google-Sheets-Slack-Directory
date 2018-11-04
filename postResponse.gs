@@ -1,4 +1,4 @@
-function postResponse(first, last, birthday, hire, team, role, email, srcChannel) {
+function postResponse(first, last, birthday, hire, team, role, email) {
 
   // FORMAT DATES AND CALCULATE TIME
   var current = new Date();
@@ -8,7 +8,8 @@ function postResponse(first, last, birthday, hire, team, role, email, srcChannel
   
   // RESPONSE PAYLOAD
   var payload = {
-    "channel": "#"+srcChannel,
+    // CHANGE CHANNEL NAME HERE AND IN INCOMING WEBHOOK SETTINGS
+   "channel": "#directory",
     "username": "New Update",
     "icon_emoji": ":white_check_mark:",
     "link_names": 1,
@@ -70,7 +71,7 @@ function postResponse(first, last, birthday, hire, team, role, email, srcChannel
     ]
   };
 
-  var url = 'https://hooks.slack.com/services/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';
+  var url = '[YOUR SLACK INCOMING WEBHOOK]';
   var options = {
     'method': 'post',
     'payload': JSON.stringify(payload)
