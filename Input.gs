@@ -1,8 +1,8 @@
 function doPost(req) {
-  var sheets = SpreadsheetApp.openById('[YOUR SPREADSHEET ID]');
+  var sheets = SpreadsheetApp.openById('[SPREADSHEET ID]');
   var params = req.parameters;
 
-  if (params.token == "[WEBHOOK ID]") {
+  if (params.token == "[OUTBOUND WEBHOOK]") {
 
     // PROCESS TEXT FROM MESSAGE
     var textRaw = String(params.text).replace(/^\s*directory\s*:*\s*/gi,"");
@@ -19,7 +19,7 @@ function doPost(req) {
     
     
     // POST RESPONSE TO QUERY
-    postResponse(first, last, birthday, hire, team, role, email, params.channel_name);
+    postResponse(first, last, birthday, hire, team, role, email);
     
     
   } else {
