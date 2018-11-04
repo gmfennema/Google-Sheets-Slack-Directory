@@ -7,7 +7,7 @@ function nameRanges() {
   
   var row = sheets.getActiveCell().getRow();
   
-  //
+  //Loops through range and sets namerange as A column
   for(i = 0; i < length; i++) {
   var name = sheets.getActiveCell().getValue();
   sheets.setActiveSelection("A"+row+":"+"I"+row);
